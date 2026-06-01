@@ -1,0 +1,7 @@
+This project is inspired by Michaelliv/pi-dynamic-workflows:
+https://github.com/Michaelliv/pi-dynamic-workflows
+
+The runtime API shape intentionally follows the same broad idea of workflow
+scripts with agent(), parallel(), pipeline(), phase(), and structured outputs.
+The implementation in this repository is written for Codex CLI and does not
+depend on Pi packages.

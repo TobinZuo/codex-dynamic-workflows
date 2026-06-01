@@ -1,0 +1,57 @@
+{
+  "name": "@tobinzuo/codex-dynamic-workflows",
+  "version": "0.1.0",
+  "description": "Claude-Code-style dynamic workflow orchestration for Codex CLI.",
+  "type": "module",
+  "bin": {
+    "codex-workflow": "./dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/runtime.js",
+    "./cli": "./dist/cli.js",
+    "./codex-adapter": "./dist/codex-adapter.js",
+    "./types": "./dist/types.js"
+  },
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist/",
+    "examples/",
+    "scripts/fake-codex.mjs",
+    "README.md",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && chmod +x dist/cli.js",
+    "test": "node --test tests/*.test.ts",
+    "test:package": "npm pack --dry-run",
+    "start": "node src/cli.ts",
+    "prepack": "tsc -p tsconfig.build.json && chmod +x dist/cli.js",
+    "run:example": "node src/cli.ts run examples/inspect.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "codex",
+    "workflow",
+    "agents",
+    "orchestration"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobinZuo/codex-dynamic-workflows.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TobinZuo/codex-dynamic-workflows/issues"
+  },
+  "homepage": "https://github.com/TobinZuo/codex-dynamic-workflows#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "typescript": "^5.7.3"
+  }
+}
